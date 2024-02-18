@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 import Axios from 'axios';
 
 const axios = Axios.create({
-	baseURL: 'youtube138.p.rapidapi.com',
+	baseURL: 'https://youtube138.p.rapidapi.com',
 	headers: {
 		'X-RapidAPI-Key': X_RapidAPI_Key,
 		'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
@@ -17,10 +17,10 @@ const axios = Axios.create({
 export const getHomepage = async () => {
 	try {
 		const result = await axios('home/');
-		return result.data.content;
+		return result.data.contents;
 	} catch (e) {
 		throw error(500, {
-			message: 'An Error Occurred'
+			message: 'Error Again'
 		});
 	}
 };

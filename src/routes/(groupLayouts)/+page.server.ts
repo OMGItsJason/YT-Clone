@@ -2,9 +2,9 @@ import { getHomepage } from '$lib/services';
 
 export const load = async () => {
 	try {
-		const content = await getHomepage();
+		const contents = await getHomepage();
 		return {
-			content
+			contents
 		};
 	} catch (error) {
 		console.error('Error occurred while loading homepage:', error);
